@@ -3,7 +3,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f0f0f0;
+    background-color: #222; /* Dark background */
+    color: #eee; /* Light text */
 }
 
 #quiz-container {
@@ -25,12 +26,14 @@ body {
 }
 
 .option-btn {
-    margin: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
+    margin: 10px; /* Increased margin */
+    padding: 15px 30px; /* Increased padding */
+    font-size: 20px; /* Increased font size */
     cursor: pointer;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid #555; /* Adjusted border color for dark background */
+    border-radius: 8px; /* Slightly larger border-radius */
+    background-color: #444; /* Darker button background */
+    color: #eee; /* Light text for buttons */
 }
 
 #result {
