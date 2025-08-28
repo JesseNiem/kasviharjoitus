@@ -99,8 +99,8 @@ const quizData = [
     { name: 'suokukka', image: 'https://placehold.co/400x300/FFF/000?text=suokukka' },
     { name: 'suopursu', image: 'https://placehold.co/400x300/FFF/000?text=suopursu' },
     { name: 'syysmaitiainen', image: 'https://placehold.co/400x300/FFF/000?text=syysmaitiainen' },
-    { name: 'tikankontti', image: 'https://placehold.co/400x300/FFF/000?text=tikankontti' },
-    }
+    { name: 'tikankontti', image: 'https://placehold.co/400x300/FFF/000?text=tikankontti' }
+];
 
 // Start the quiz when the page loads
 window.onload = startQuiz;
