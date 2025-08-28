@@ -134,13 +134,14 @@ function showOptions() {
     optionsContainer.innerHTML = ''; // Clear previous buttons
 
     currentOptions.forEach((optionText, index) => {
-        const button = document.createElement('button');
-        button.textContent = optionText;
-        button.onclick = () => checkAnswer(index);
-        optionsContainer.appendChild(button);
+        const card = document.createElement('div');
+        card.textContent = optionText;
+        card.classList.add('option-card');
+        card.onclick = () => checkAnswer(index);
+        optionsContainer.appendChild(card);
     });
 
-    optionsContainer.style.display = 'block';
+    optionsContainer.style.display = 'flex';
 }
 
 function checkAnswer(index) {
