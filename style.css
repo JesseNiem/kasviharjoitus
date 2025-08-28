@@ -13,8 +13,9 @@ body {
 }
 
 #plant-image {
-    width: 400px;
-    height: 300px;
+    width: 600px;
+    height: 450px;
+    object-fit: contain; /* Prevent stretching */
     cursor: pointer;
     border: 2px solid #ccc;
     border-radius: 8px;

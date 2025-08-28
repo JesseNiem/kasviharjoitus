@@ -28,7 +28,8 @@ const customImages = {
     "kanerva": "https://akaanseutu.fi/wp-content/uploads/2019/08/33Villiyrtti-Kanerva-1024x682.jpg",
     "karhunruoho": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEissQuGkNOmLsOlgHM-rzTitVCB34aJ448EU_lt_p-UXK6G7KjYk2mzgOYWc3gpMT52u3tb4UhewZl52oovW_SIbiidQxjyHYN5sxKTiYa3H65WpNrQVOg6Ur_PFn0Lxw7O9tPoqbAxTMZ7/s600/DSC_9532.jpeg",
     "haapa": "https://www.kotipuutarha.fi/wp-content/uploads/2022/12/kk-kasvi-haapa-1050NO.jpg",
-    "kirkiruoho": "https://pohjolankasvienpauloissa.com/wp-content/uploads/2019/08/2gymnadenia-conopsea-ssp.-conopsea-ahokirkiruoho-9.7.2017-a-eckerc3b6.jpg?w=625"
+    "kirkiruoho": "https://pohjolankasvienpauloissa.com/wp-content/uploads/2019/08/2gymnadenia-conopsea-ssp.-conopsea-ahokirkiruoho-9.7.2017-a-eckerc3b6.jpg?w=625",
+    "mähkä": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Selaginella_selaginoides_-_Niitv%C3%A4lja_bog.jpg/1365px-Selaginella_selaginoides_-_Niitv%C3%A4lja_bog.jpg"
 };
 
 function shuffle(array) {
