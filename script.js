@@ -1,220 +1,168 @@
-
-const quizData = [
-    { name: 'ahomansikka', image: 'https://upload.wikimedia.org/wikipedia/commons/a/a3/Ahomansikka_Fragaria_vesca.jpg' },
-    { name: 'ahomatara', image: 'https://upload.wikimedia.org/wikipedia/commons/7/7a/Galium_boreale_L._(3692135143).jpg' },
-    { name: 'aho-orvokki', image: 'https://upload.wikimedia.org/wikipedia/commons/2/2a/-Viola_canina-_%2852130086154%29.jpg' },
-    { name: 'ahosuolaheinä', image: 'https://placehold.co/400x300/FFF/000?text=ahosuolaheinä' },
-    { name: 'ajuruoho', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Thymus_serpyllum_-_Köhler–s_Medizinal-Pflanzen-137.jpg/800px-Thymus_serpyllum_-_Köhler–s_Medizinal-Pflanzen-137.jpg' },
-    { name: 'haapa', image: 'https://upload.wikimedia.org/wikipedia/commons/b/b9/Aspen_Kiikeli_Oulu_20241005.jpg' },
-    { name: 'harmaaleppä', image: 'https://placehold.co/400x300/FFF/000?text=harmaaleppä' },
-    { name: 'heinätähtimö', image: 'https://placehold.co/400x300/FFF/000?text=heinätähtimö' },
-    { name: 'hieskoivu', image: 'https://placehold.co/400x300/FFF/000?text=hieskoivu' },
-    { name: 'hiirenporras', image: 'https://placehold.co/400x300/FFF/000?text=hiirenporras' },
-    { name: 'hiirenvirna', image: 'https://placehold.co/400x300/FFF/000?text=hiirenvirna' },
-    { name: 'hilla', image: 'https://placehold.co/400x300/FFF/000?text=hilla' },
-    { name: 'huopaohdake', image: 'https://placehold.co/400x300/FFF/000?text=huopaohdake' },
-    { name: 'isokarpalo', image: 'https://placehold.co/400x300/FFF/000?text=isokarpalo' },
-    { name: 'pikkukarpalo', image: 'https://placehold.co/400x300/FFF/000?text=pikkukarpalo' },
-    { name: 'isotalvikki', image: 'https://placehold.co/400x300/FFF/000?text=isotalvikki' },
-    { name: 'jouhivihvilä', image: 'https://placehold.co/400x300/FFF/000?text=jouhivihvilä' },
-    { name: 'juolukka', image: 'https://placehold.co/400x300/FFF/000?text=juolukka' },
-    { name: 'järvikaisla', image: 'https://placehold.co/400x300/FFF/000?text=järvikaisla' },
-    { name: 'järviruoko', image: 'https://placehold.co/400x300/FFF/000?text=järviruoko' },
-    { name: 'kaarlenvaltikka', image: 'https://placehold.co/400x300/FFF/000?text=kaarlenvaltikka' },
-    { name: 'kanerva', image: 'https://placehold.co/400x300/FFF/000?text=kanerva' },
-    { name: 'kangasmaitikka', image: 'https://placehold.co/400x300/FFF/000?text=kangasmaitikka' },
-    { name: 'karhunputki', image: 'https://placehold.co/400x300/FFF/000?text=karhunputki' },
-    { name: 'karhunruoho', image: 'https://placehold.co/400x300/FFF/000?text=karhunruoho' },
-    { name: 'kataja', image: 'https://placehold.co/400x300/FFF/000?text=kataja' },
-    { name: 'keltano', image: 'https://placehold.co/400x300/FFF/000?text=keltano' },
-    { name: 'kevätpiippo', image: 'https://placehold.co/400x300/FFF/000?text=kevätpiippo' },
-    { name: 'kiiltopaju', image: 'https://placehold.co/400x300/FFF/000?text=kiiltopaju' },
-    { name: 'kirkiruoho', image: 'https://placehold.co/400x300/FFF/000?text=kirkiruoho' },
-    { name: 'kissankello', image: 'https://placehold.co/400x300/FFF/000?text=kissankello' },
-    { name: 'kissankäpälä', image: 'https://placehold.co/400x300/FFF/000?text=kissankäpälä' },
-    { name: 'koiranputki', image: 'https://placehold.co/400x300/FFF/000?text=koiranputki' },
-    { name: 'korpiorvokki', image: 'https://placehold.co/400x300/FFF/000?text=korpiorvokki' },
-    { name: 'kotipihlaja', image: 'https://placehold.co/400x300/FFF/000?text=kotipihlaja' },
-    { name: 'kullero', image: 'https://placehold.co/400x300/FFF/000?text=kullero' },
-    { name: 'kultapiisku', image: 'https://placehold.co/400x300/FFF/000?text=kultapiisku' },
-    { name: 'kurjenjalka', image: 'https://placehold.co/400x300/FFF/000?text=kurjenjalka' },
-    { name: 'kuusi', image: 'https://placehold.co/400x300/FFF/000?text=kuusi' },
-    { name: 'käenkaali', image: 'https://placehold.co/400x300/FFF/000?text=käenkaali' },
-    { name: 'lettovilla', image: 'https://placehold.co/400x300/FFF/000?text=lettovilla' },
-    { name: 'lillukka', image: 'https://placehold.co/400x300/FFF/000?text=lillukka' },
-    { name: 'luhtavilla', image: 'https://placehold.co/400x300/FFF/000?text=luhtavilla' },
-    { name: 'lääte', image: 'https://placehold.co/400x300/FFF/000?text=lääte' },
-    { name: 'maariankämmekkä', image: 'https://placehold.co/400x300/FFF/000?text=maariankämmekkä' },
-    { name: 'maitohorsma', image: 'https://placehold.co/400x300/FFF/000?text=maitohorsma' },
-    { name: 'mesiangervo', image: 'https://placehold.co/400x300/FFF/000?text=mesiangervo' },
-    { name: 'mesimarja', image: 'https://placehold.co/400x300/FFF/000?text=mesimarja' },
-    { name: 'metsäkurjenpolvi', image: 'https://placehold.co/400x300/FFF/000?text=metsäkurjenpolvi' },
-    { name: 'metsälauha', image: 'https://placehold.co/400x300/FFF/000?text=metsälauha' },
-    { name: 'metsämaitikka', image: 'https://placehold.co/400x300/FFF/000?text=metsämaitikka' },
-    { name: 'metsäruusu', image: 'https://placehold.co/400x300/FFF/000?text=metsäruusu' },
-    { name: 'metsätähti', image: 'https://placehold.co/400x300/FFF/000?text=metsätähti' },
-    { name: 'mustikka', image: 'https://placehold.co/400x300/FFF/000?text=mustikka' },
-    { name: 'mänty', image: 'https://placehold.co/400x300/FFF/000?text=mänty' },
-    { name: 'neidonkenkä', image: 'https://placehold.co/400x300/FFF/000?text=neidonkenkä' },
-    { name: 'niittyleinikki', image: 'https://placehold.co/400x300/FFF/000?text=niittyleinikki' },
-    { name: 'niittysuolaheinä', image: 'https://placehold.co/400x300/FFF/000?text=niittysuolaheinä' },
-    { name: 'nokkonen', image: 'https://placehold.co/400x300/FFF/000?text=nokkonen' },
-    { name: 'nuokkuhelmikkä', image: 'https://placehold.co/400x300/FFF/000?text=nuokkuhelmikkä' },
-    { name: 'nuokkutalvikki', image: 'https://placehold.co/400x300/FFF/000?text=nuokkutalvikki' },
-    { name: 'nurmilauha', image: 'https://placehold.co/400x300/FFF/000?text=nurmilauha' },
-    { name: 'näsiä', image: 'https://placehold.co/400x300/FFF/000?text=näsiä' },
-    { name: 'ojakärsämö', image: 'https://placehold.co/400x300/FFF/000?text=ojakärsämö' },
-    { name: 'ojakellukka', image: 'https://placehold.co/400x300/FFF/000?text=ojakellukka' },
-    { name: 'oravanmarja', image: 'https://placehold.co/400x300/FFF/000?text=oravanmarja' },
-    { name: 'peltosaunio', image: 'https://placehold.co/400x300/FFF/000?text=peltosaunio' },
-    { name: 'pietaryrtti', image: 'https://placehold.co/400x300/FFF/000?text=pietaryrtti' },
-    { name: 'piharatamo', image: 'https://placehold.co/400x300/FFF/000?text=piharatamo' },
-    { name: 'pihasaunio', image: 'https://placehold.co/400x300/FFF/000?text=pihasaunio' },
-    { name: 'pihatähtimö', image: 'https://placehold.co/400x300/FFF/000?text=pihatähtimö' },
-    { name: 'pikkulaukku', image: 'https://placehold.co/400x300/FFF/000?text=pikkulaukku' },
-    { name: 'pohjanlumme', image: 'https://placehold.co/400x300/FFF/000?text=pohjanlumme' },
-    { name: 'pohjanpaju', image: 'https://placehold.co/400x300/FFF/000?text=pohjanpaju' },
-    { name: 'pohjanpunaherukka', image: 'https://placehold.co/400x300/FFF/000?text=pohjanpunaherukka' },
-    { name: 'poimulehti', image: 'https://placehold.co/400x300/FFF/000?text=poimulehti' },
-    { name: 'pulskaneilikka', image: 'https://placehold.co/400x300/FFF/000?text=pulskaneilikka' },
-    { name: 'pullosara', image: 'https://placehold.co/400x300/FFF/000?text=pullosara' },
-    { name: 'puna-ailakki', image: 'https://placehold.co/400x300/FFF/000?text=puna-ailakki' },
-    { name: 'puna-apila', image: 'https://placehold.co/400x300/FFF/000?text=puna-apila' },
-    { name: 'punakonnanmarja', image: 'https://placehold.co/400x300/FFF/000?text=punakonnanmarja' },
-    { name: 'puolukka', image: 'https://placehold.co/400x300/FFF/000?text=puolukka' },
-    { name: 'pyöreälehtikihokki', image: 'https://placehold.co/400x300/FFF/000?text=pyöreälehtikihokki' },
-    { name: 'päivänkakkara', image: 'https://placehold.co/400x300/FFF/000?text=päivänkakkara' },
-    { name: 'raate', image: 'https://placehold.co/400x300/FFF/000?text=raate' },
-    { name: 'raita', image: 'https://placehold.co/400x300/FFF/000?text=raita' },
-    { name: 'rauduskoivu', image: 'https://placehold.co/400x300/FFF/000?text=rauduskoivu' },
-    { name: 'rentukka', image: 'https://placehold.co/400x300/FFF/000?text=rentukka' },
-    { name: 'riekonmarja', image: 'https://placehold.co/400x300/FFF/000?text=riekonmarja' },
-    { name: 'ruohokanukka', image: 'https://placehold.co/400x300/FFF/000?text=ruohokanukka' },
-    { name: 'rätvänä', image: 'https://placehold.co/400x300/FFF/000?text=rätvänä' },
-    { name: 'rönsyleinikki', image: 'https://placehold.co/400x300/FFF/000?text=rönsyleinikki' },
-    { name: 'siankärsämö', image: 'https://placehold.co/400x300/FFF/000?text=siankärsämö' },
-    { name: 'sianpuolukka', image: 'https://placehold.co/400x300/FFF/000?text=sianpuolukka' },
-    { name: 'silmäruoho', image: 'https://placehold.co/400x300/FFF/000?text=silmäruoho' },
-    { name: 'sudenmarja', image: 'https://placehold.co/400x300/FFF/000?text=sudenmarja' },
-    { name: 'suokukka', image: 'https://placehold.co/400x300/FFF/000?text=suokukka' },
-    { name: 'suopursu', image: 'https://placehold.co/400x300/FFF/000?text=suopursu' },
-    { name: 'syysmaitiainen', image: 'https://placehold.co/400x300/FFF/000?text=syysmaitiainen' },
-    { name: 'tikankontti', image: 'https://placehold.co/400x300/FFF/000?text=tikankontti' },
-    { name: 'timotei', image: 'https://placehold.co/400x300/FFF/000?text=timotei' },
-    { name: 'tuomi', image: 'https://placehold.co/400x300/FFF/000?text=tuomi' },
-    { name: 'tupasluikka', image: 'https://placehold.co/400x300/FFF/000?text=tupasluikka' },
-    { name: 'tupasvilla', image: 'https://placehold.co/400x300/FFF/000?text=tupasvilla' },
-    { name: 'tähtitalvikki', image: 'https://placehold.co/400x300/FFF/000?text=tähtitalvikki' },
-    { name: 'ulpukka', image: 'https://placehold.co/400x300/FFF/000?text=ulpukka' },
-    { name: 'vadelma', image: 'https://placehold.co/400x300/FFF/000?text=vadelma' },
-    { name: 'vaivaiskoivu', image: 'https://placehold.co/400x300/FFF/000?text=vaivaiskoivu' },
-    { name: 'valkoapila', image: 'https://placehold.co/400x300/FFF/000?text=valkoapila' },
-    { name: 'vanamo', image: 'https://placehold.co/400x300/FFF/000?text=vanamo' },
-    { name: 'variksenmarja', image: 'https://placehold.co/400x300/FFF/000?text=variksenmarja' },
-    { name: 'villapääluikka', image: 'https://placehold.co/400x300/FFF/000?text=villapääluikka' },
-    { name: 'vilukko', image: 'https://placehold.co/400x300/FFF/000?text=vilukko' },
-    { name: 'voikukka', image: 'https://placehold.co/400x300/FFF/000?text=voikukka' },
-    { name: 'yökönlehdet', image: 'https://placehold.co/400x300/FFF/000?text=yökönlehdet' },
-    { name: 'kallioimarre', image: 'https://placehold.co/400x300/FFF/000?text=kallioimarre' },
-    { name: 'korpi-imarre', image: 'https://placehold.co/400x300/FFF/000?text=korpi-imarre' },
-    { name: 'kotkansiipi', image: 'https://placehold.co/400x300/FFF/000?text=kotkansiipi' },
-    { name: 'metsäimarre', image: 'https://placehold.co/400x300/FFF/000?text=metsäimarre' },
-    { name: 'järvikorte', image: 'https://placehold.co/400x300/FFF/000?text=järvikorte' },
-    { name: 'metsäkorte', image: 'https://placehold.co/400x300/FFF/000?text=metsäkorte' },
-    { name: 'metsäalvejuuri', image: 'https://placehold.co/400x300/FFF/000?text=metsäalvejuuri' },
-    { name: 'mähkä', image: 'https://placehold.co/400x300/FFF/000?text=mähkä' },
-    { name: 'riidenlieko', image: 'https://placehold.co/400x300/FFF/000?text=riidenlieko' }
+const allPlants = [
+    "ahomansikka","ahomatara","aho-orvokki","ahosuolaheinä","ajuruoho","haapa","harmaaleppä","heinätähtimö","hieskoivu",
+    "hiirenporras","hiirenvirna","hilla","huopaohdake","isokarpalo","pikkukarpalo","isotalvikki","jouhivihvilä",
+    "juolukka","järvikaisla","järviruoko","kaarlenvaltikka","kanerva","kangasmaitikka","karhunputki","karhunruoho","kataja",
+    "keltano","kevätpiippo","kiiltopaju","kirkiruoho","kissankello","kissankäpälä","koiranputki","korpiorvokki","kotipihlaja",
+    "kullero","kultapiisku","kurjenjalka","kuusi","käenkaali","lettovilla","lillukka","luhtavilla","lääte",
+    "maariankämmekkä","maitohorsma","mesiangervo","mesimarja","metsäkurjenpolvi","metsälauha","metsämaitikka","metsäruusu",
+    "metsätähti","mustikka","mänty","neidonkenkä","niittyleinikki","niittysuolaheinä","nokkonen","nuokkuhelmikkä","nuokkutalvikki",
+    "nurmilauha","näsiä","ojakärsämö","ojakellukka","oravanmarja","peltosaunio","pietaryrtti","piharatamo",
+    "pihasaunio","pihatähtimö","pikkulaukku","pohjanlumme","pohjanpaju","pohjanpunaherukka","poimulehti","pulskaneilikka",
+    "pullosara","puna-ailakki","puna-apila","punakonnanmarja","puolukka","pyöreälehtikihokki","päivänkakkara","raate","raita",
+    "rauduskoivu","rentukka","riekonmarja","ruohokanukka","rätvänä","rönsyleinikki","siankärsämö","sianpuolukka","silmäruoho",
+    "sudenmarja","suokukka","suopursu","syysmaitiainen","tikankontti","timotei","tuomi","tupasluikka","tupasvilla","tähtitalvikki",
+    "ulpukka","vadelma","vaivaiskoivu","valkoapila","vanamo","variksenmarja","villapääluikka","vilukko","voikukka","valkoyökönlehti",
+    "siniyökönlehti", "kallioimarre", "korpi-imarre", "kotkansiipi", "metsäimarre", "järvikorte", "metsäkorte", "metsäalvejuuri", "mähkä", "riidenlieko"
 ];
 
-// Start the quiz when the page loads
-window.onload = startQuiz;
+const customImages = {
+    "voikukka": "https://i.media.fi/incoming/bawa09/1169230-e1562065496860.jpg/alternates/FREE_1440/1169230-e1562065496860.jpg",
+    "isokarpalo": "https://upload.wikimedia.org/wikipedia/commons/8/83/Vaccinium_oxycoccos1.jpg",
+    "ajuruoho": "https://images.luontoportti.com/kIO18gzkE2VTWyx4GJvjlb0L7lSbAJsB8I900_z0KNU/resize:fit:1920:1080/watermark:1.0:noea:-105:20:0/plain/s3://lportti-prod-images/ff37147b-3d33-405d-a97c-b7211f05913b@jpeg",
+    "pikkukarpalo": "https://images.luontoportti.com/TRNZ-DX7KnHgHPKiIC6UMrQX7nC0NDG5W8EsLuJXQCo/resize:fit:1920:1080/watermark:1.0:noea:-105:20:0/plain/s3://lportti-prod-images/86ba8208-4fe2-4e12-8750-812379c37d8e@jpeg",
+    "raita": "https://peda.net/oppimateriaalit/e-oppi/verkkokauppa/yl%C3%A4koulu/lukuvuosi-2021-2022/ebiologia-8-2021/e8n7/5-metsien-kasvit/kasvit/kuvamappi/puulajikuvia/raita:file/download/0e2d2e3bd0f0f662f26e45293afe6d0b9f434777/Raidan%20lehdet.jpg",
+    "poimulehti": "https://hortapuisto.fi/wp-content/uploads/2021/05/kukkiva-poimulehti-768x1024.jpg",
+    "kataja": "https://www.arktisetaromit.fi/binary/file/-/fid/208/",
+    "hiirenporras": "http://virtuoosi.pkky.fi/luonnonhoito/kasvit/kuvat/Hiirenporras.jpg",
+    "silmäruoho": "https://pbs.twimg.com/media/EAQYq1qX4AAYyON.jpg",
+    "kanerva": "https://akaanseutu.fi/wp-content/uploads/2019/08/33Villiyrtti-Kanerva-1024x682.jpg",
+    "karhunruoho": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEissQuGkNOmLsOlgHM-rzTitVCB34aJ448EU_lt_p-UXK6G7KjYk2mzgOYWc3gpMT52u3tb4UhewZl52oovW_SIbiidQxjyHYN5sxKTiYa3H65WpNrQVOg6Ur_PFn0Lxw7O9tPoqbAxTMZ7/s600/DSC_9532.jpeg",
+    "haapa": "https://www.kotipuutarha.fi/wp-content/uploads/2022/12/kk-kasvi-haapa-1050NO.jpg",
+    "kirkiruoho": "https://pohjolankasvienpauloissa.com/wp-content/uploads/2019/08/2gymnadenia-conopsea-ssp.-conopsea-ahokirkiruoho-9.7.2017-a-eckerc3b6.jpg?w=625"
+};
 
-
-let currentQuestionIndex = 0;
-let score = 0;
-
-const plantImage = document.getElementById('plant-image');
-const optionsContainer = document.getElementById('options-container');
-const resultElement = document.getElementById('result');
-const scoreElement = document.getElementById('score');
-const quizContainer = document.getElementById('quiz-container');
-const finalScoreContainer = document.getElementById('final-score-container');
-const finalScoreElement = document.getElementById('final-score');
-
-function startQuiz() {
-    // Shuffle the quiz data
-    quizData.sort(() => Math.random() - 0.5);
-    showQuestion();
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
 }
 
-function showQuestion() {
-    resultElement.textContent = '';
-    optionsContainer.innerHTML = '';
-    optionsContainer.style.display = 'none';
+async function fetchWikimediaImage(name) {
+    const searchTerm = name.split(',')[0];
+    const url = `https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&prop=pageimages&pithumbsize=500&titles=${encodeURIComponent(searchTerm)}`;
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        const pages = data.query.pages;
+        const firstPage = Object.values(pages)[0];
+        return firstPage?.thumbnail?.source || null;
+    } catch {
+        return null;
+    }
+}
 
-    if (currentQuestionIndex < quizData.length) {
-        const question = quizData[currentQuestionIndex];
-        plantImage.src = question.image;
-        plantImage.alt = question.name;
+async function fetchiNaturalistImage(name) {
+    const searchTerm = name.split(',')[0];
+    const url = `https://api.inaturalist.org/v1/taxa?q=${encodeURIComponent(searchTerm)}&rank=species`;
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        return data.results[0]?.default_photo?.medium_url || null;
+    } catch {
+        return null;
+    }
+}
 
-        plantImage.onclick = () => {
-            generateOptions();
-            optionsContainer.style.display = 'block';
-            plantImage.onclick = null; // Remove click event after showing options
-        };
+async function fetchGBIFImage(name) {
+    const searchTerm = name.split(',')[0];
+    const url = `https://api.gbif.org/v1/species/match?name=${encodeURIComponent(searchTerm)}`;
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        if (data.usageKey) {
+            const mediaUrl = `https://api.gbif.org/v1/species/${data.usageKey}/media`;
+            const mediaResponse = await fetch(mediaUrl);
+            const mediaData = await mediaResponse.json();
+            return mediaData.results[0]?.identifier || null;
+        }
+    } catch {
+        return null;
+    }
+    return null;
+}
+
+async function findPlantImage(name) {
+    const simplified = name.toLowerCase();
+    if (customImages[simplified]) {
+        return customImages[simplified];
+    }
+    let imageUrl = await fetchWikimediaImage(name);
+    if (imageUrl) return imageUrl;
+    imageUrl = await fetchiNaturalistImage(name);
+    if (imageUrl) return imageUrl;
+    imageUrl = await fetchGBIFImage(name);
+    if (imageUrl) return imageUrl;
+    return "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg";
+}
+
+let shuffledPlants = [];
+let currentPlant;
+let correctCount = 0;
+let totalPoints = 0;
+let questionIndex = 0;
+let currentOptions = [];
+
+async function loadQuiz() {
+    if (questionIndex >= shuffledPlants.length) {
+        const message = `Sait ${correctCount}/${shuffledPlants.length} oikein ja yhteensä ${totalPoints.toFixed(1)} pistettä!`;
+        document.getElementById('quiz-container').innerHTML = `<h2>${message}</h2>`; // Changed from 'quiz' to 'quiz-container'
+        return;
+    }
+    currentPlant = shuffledPlants[questionIndex];
+    const imageUrl = await findPlantImage(currentPlant);
+    document.getElementById('plant-image').src = imageUrl;
+    document.getElementById('result').textContent = '';
+    document.getElementById('score').textContent = `Kysymys ${questionIndex + 1}/${shuffledPlants.length} — Oikein: ${correctCount} — Pisteet: ${totalPoints.toFixed(1)}`;
+    document.getElementById('options-container').style.display = 'none'; // Changed from 'options' to 'options-container'
+    document.getElementById('answerInput').value = ''; // Added answerInput
+}
+
+function showOptions() {
+    const options = [currentPlant];
+    while (options.length < 3) {
+        const randomPlant = allPlants[Math.floor(Math.random() * allPlants.length)];
+        if (!options.includes(randomPlant)) {
+            options.push(randomPlant);
+        }
+    }
+    currentOptions = shuffle(options);
+    const buttons = document.getElementById('options-container').children; // Changed from 'options' to 'options-container'
+    buttons[0].textContent = currentOptions[0];
+    buttons[1].textContent = currentOptions[1];
+    buttons[2].textContent = currentOptions[2];
+    document.getElementById('options-container').style.display = 'block'; // Changed from 'options' to 'options-container'
+}
+
+function checkAnswer(index) {
+    if (currentOptions[index] === currentPlant) {
+        document.getElementById('result').textContent = 'Oikein!';
+        correctCount++;
+        totalPoints += 0.5;
     } else {
-        endQuiz();
+        document.getElementById('result').textContent = `Väärin! Oikea vastaus oli: ${currentPlant}`;
     }
+    questionIndex++;
+    setTimeout(loadQuiz, 1500);
 }
 
-function generateOptions() {
-    const question = quizData[currentQuestionIndex];
-    const correctAnswer = question.name;
-
-    const options = [correctAnswer];
-    const distractors = quizData.filter(item => item.name !== correctAnswer);
-    
-    while (options.length < 3 && distractors.length > 0) {
-        const randomIndex = Math.floor(Math.random() * distractors.length);
-        options.push(distractors.splice(randomIndex, 1)[0].name);
+document.getElementById('answerInput').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+        const userInput = this.value.trim().toLowerCase();
+        if (userInput === currentPlant.toLowerCase()) {
+            document.getElementById('result').textContent = 'OIKEIN!';
+            correctCount++;
+            totalPoints += 1;
+        } else {
+            document.getElementById('result').textContent = `Väärin! Oikea vastaus oli: ${currentPlant}`;
+        }
+        questionIndex++;
+        setTimeout(loadQuiz, 1500);
     }
+});
 
-    // Shuffle options
-    options.sort(() => Math.random() - 0.5);
-
-    options.forEach(option => {
-        const button = document.createElement('button');
-        button.textContent = option;
-        button.classList.add('option-btn');
-        button.onclick = () => selectAnswer(option === correctAnswer);
-        optionsContainer.appendChild(button);
-    });
-}
-
-function selectAnswer(isCorrect) {
-    if (isCorrect) {
-        resultElement.textContent = 'Oikein!';
-        score++;
-    } else {
-        resultElement.textContent = 'Väärin.';
-    }
-    scoreElement.textContent = `Pisteet: ${score}`;
-
-    // Disable buttons
-    const buttons = optionsContainer.getElementsByTagName('button');
-    for (let button of buttons) {
-        button.disabled = true;
-    }
-
-    currentQuestionIndex++;
-    setTimeout(showQuestion, 2000); // Wait 2 seconds before next question
-}
-
-function endQuiz() {
-    quizContainer.style.display = 'none';
-    finalScoreContainer.style.display = 'block';
-    finalScoreElement.textContent = `Sait ${score} / ${quizData.length} pistettä.`;
-}
-
-// Start the quiz when the page loads
-window.onload = startQuiz;
+window.onload = () => {
+    shuffledPlants = shuffle([...allPlants]);
+    loadQuiz();
+};
