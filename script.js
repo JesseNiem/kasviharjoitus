@@ -17,13 +17,13 @@ const allPlants = [
 
 const customImages = {
     "voikukka": "https://i.media.fi/incoming/bawa09/1169230-e1562065496860.jpg/alternates/FREE_1440/1169230-e1562065496860.jpg",
-    "isokarpalo": "https://upload.wikimedia.org/wikipedia/commons/8/83/Vaccinium_oxycoccos1.jpg",
-    "ajuruoho": "https://images.luontoportti.com/kIO18gzkE2VTWyx4GJvjlb0L7lSbAJsB8I900_z0KNU/resize:fit:1920:1080/watermark:1.0:noea:-105:20:0/plain/s3://lportti-prod-images/ff37147b-3d33-405d-a97c-b7211f05913b@jpeg",
+    "isokarpalo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/VacciniumOxycoccos.jpg/1280px-VacciniumOxycoccos.jpg",
+    "ajuruoho": "https://www.vihervimma.fi/tuotekuvat/1200x1200/harmaa-ajoruoho_albiflorus.jpg",
     "pikkukarpalo": "https://images.luontoportti.com/TRNZ-DX7KnHgHPKiIC6UMrQX7nC0NDG5W8EsLuJXQCo/resize:fit:1920:1080/watermark:1.0:noea:-105:20:0/plain/s3://lportti-prod-images/86ba8208-4fe2-4e12-8750-812379c37d8e@jpeg",
     "raita": "https://peda.net/oppimateriaalit/e-oppi/verkkokauppa/yl%C3%A4koulu/lukuvuosi-2021-2022/ebiologia-8-2021/e8n7/5-metsien-kasvit/kasvit/kuvamappi/puulajikuvia/raita:file/download/0e2d2e3bd0f0f662f26e45293afe6d0b9f434777/Raidan%20lehdet.jpg",
     "poimulehti": "https://hortapuisto.fi/wp-content/uploads/2021/05/kukkiva-poimulehti-768x1024.jpg",
     "kataja": "https://www.arktisetaromit.fi/binary/file/-/fid/208/",
-    "hiirenporras": "http://virtuoosi.pkky.fi/luonnonhoito/kasvit/kuvat/Hiirenporras.jpg",
+    "hiirenporras": "https://sakari.kuvat.fi/kasvio2/hiirenporras2.jpg",
     "silmäruoho": "https://pbs.twimg.com/media/EAQYq1qX4AAYyON.jpg",
     "kanerva": "https://akaanseutu.fi/wp-content/uploads/2019/08/33Villiyrtti-Kanerva-1024x682.jpg",
     "karhunruoho": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEissQuGkNOmLsOlgHM-rzTitVCB34aJ448EU_lt_p-UXK6G7KjYk2mzgOYWc3gpMT52u3tb4UhewZl52oovW_SIbiidQxjyHYN5sxKTiYa3H65WpNrQVOg6Ur_PFn0Lxw7O9tPoqbAxTMZ7/s600/DSC_9532.jpeg",
