@@ -100,8 +100,7 @@ const quizData = [
     { name: 'suopursu', image: 'https://placehold.co/400x300/FFF/000?text=suopursu' },
     { name: 'syysmaitiainen', image: 'https://placehold.co/400x300/FFF/000?text=syysmaitiainen' },
     { name: 'tikankontti', image: 'https://placehold.co/400x300/FFF/000?text=tikankontti' },
-    { name:.textContent = `Sait ${score} / ${quizData.length} pistettä.`;
-}
+    }
 
 // Start the quiz when the page loads
 window.onload = startQuiz;
