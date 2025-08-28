@@ -99,7 +99,31 @@ const quizData = [
     { name: 'suokukka', image: 'https://placehold.co/400x300/FFF/000?text=suokukka' },
     { name: 'suopursu', image: 'https://placehold.co/400x300/FFF/000?text=suopursu' },
     { name: 'syysmaitiainen', image: 'https://placehold.co/400x300/FFF/000?text=syysmaitiainen' },
-    { name: 'tikankontti', image: 'https://placehold.co/400x300/FFF/000?text=tikankontti' }
+    { name: 'tikankontti', image: 'https://placehold.co/400x300/FFF/000?text=tikankontti' },
+    { name: 'timotei', image: 'https://placehold.co/400x300/FFF/000?text=timotei' },
+    { name: 'tuomi', image: 'https://placehold.co/400x300/FFF/000?text=tuomi' },
+    { name: 'tupasluikka', image: 'https://placehold.co/400x300/FFF/000?text=tupasluikka' },
+    { name: 'tupasvilla', image: 'https://placehold.co/400x300/FFF/000?text=tupasvilla' },
+    { name: 'tähtitalvikki', image: 'https://placehold.co/400x300/FFF/000?text=tähtitalvikki' },
+    { name: 'ulpukka', image: 'https://placehold.co/400x300/FFF/000?text=ulpukka' },
+    { name: 'vadelma', image: 'https://placehold.co/400x300/FFF/000?text=vadelma' },
+    { name: 'vaivaiskoivu', image: 'https://placehold.co/400x300/FFF/000?text=vaivaiskoivu' },
+    { name: 'valkoapila', image: 'https://placehold.co/400x300/FFF/000?text=valkoapila' },
+    { name: 'vanamo', image: 'https://placehold.co/400x300/FFF/000?text=vanamo' },
+    { name: 'variksenmarja', image: 'https://placehold.co/400x300/FFF/000?text=variksenmarja' },
+    { name: 'villapääluikka', image: 'https://placehold.co/400x300/FFF/000?text=villapääluikka' },
+    { name: 'vilukko', image: 'https://placehold.co/400x300/FFF/000?text=vilukko' },
+    { name: 'voikukka', image: 'https://placehold.co/400x300/FFF/000?text=voikukka' },
+    { name: 'yökönlehdet', image: 'https://placehold.co/400x300/FFF/000?text=yökönlehdet' },
+    { name: 'kallioimarre', image: 'https://placehold.co/400x300/FFF/000?text=kallioimarre' },
+    { name: 'korpi-imarre', image: 'https://placehold.co/400x300/FFF/000?text=korpi-imarre' },
+    { name: 'kotkansiipi', image: 'https://placehold.co/400x300/FFF/000?text=kotkansiipi' },
+    { name: 'metsäimarre', image: 'https://placehold.co/400x300/FFF/000?text=metsäimarre' },
+    { name: 'järvikorte', image: 'https://placehold.co/400x300/FFF/000?text=järvikorte' },
+    { name: 'metsäkorte', image: 'https://placehold.co/400x300/FFF/000?text=metsäkorte' },
+    { name: 'metsäalvejuuri', image: 'https://placehold.co/400x300/FFF/000?text=metsäalvejuuri' },
+    { name: 'mähkä', image: 'https://placehold.co/400x300/FFF/000?text=mähkä' },
+    { name: 'riidenlieko', image: 'https://placehold.co/400x300/FFF/000?text=riidenlieko' }
 ];
 
 // Start the quiz when the page loads
