@@ -30,8 +30,8 @@ body {
 .option-btn {
     width: calc(100% - 20px); /* 100% width minus horizontal margins */
     margin: 10px;
-    padding: 15px 30px;
-    font-size: 20px;
+    padding: 30px 60px; /* 2x larger padding */
+    font-size: 40px; /* 2x larger font size */
     cursor: pointer;
     border: 1px solid #555;
     border-radius: 8px;
