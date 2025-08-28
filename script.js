@@ -128,11 +128,18 @@ function showOptions() {
         }
     }
     currentOptions = shuffle(options);
-    const buttons = document.getElementById('options-container').children; // Changed from 'options' to 'options-container'
-    buttons[0].textContent = currentOptions[0];
-    buttons[1].textContent = currentOptions[1];
-    buttons[2].textContent = currentOptions[2];
-    document.getElementById('options-container').style.display = 'block'; // Changed from 'options' to 'options-container'
+
+    const optionsContainer = document.getElementById('options-container');
+    optionsContainer.innerHTML = ''; // Clear previous buttons
+
+    currentOptions.forEach((optionText, index) => {
+        const button = document.createElement('button');
+        button.textContent = optionText;
+        button.onclick = () => checkAnswer(index);
+        optionsContainer.appendChild(button);
+    });
+
+    optionsContainer.style.display = 'block';
 }
 
 function checkAnswer(index) {
