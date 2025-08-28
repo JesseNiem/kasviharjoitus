@@ -24,17 +24,20 @@ body {
 #options-container {
     margin-top: 20px;
     display: none; /* Hidden by default */
+    width: 600px; /* Same width as image */
 }
 
 .option-btn {
-    margin: 10px; /* Increased margin */
-    padding: 15px 30px; /* Increased padding */
-    font-size: 20px; /* Increased font size */
+    width: calc(100% - 20px); /* 100% width minus horizontal margins */
+    margin: 10px;
+    padding: 15px 30px;
+    font-size: 20px;
     cursor: pointer;
-    border: 1px solid #555; /* Adjusted border color for dark background */
-    border-radius: 8px; /* Slightly larger border-radius */
-    background-color: #444; /* Darker button background */
-    color: #eee; /* Light text for buttons */
+    border: 1px solid #555;
+    border-radius: 8px;
+    background-color: #444;
+    color: #eee;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 #result {
