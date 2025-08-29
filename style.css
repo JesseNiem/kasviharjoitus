@@ -50,15 +50,16 @@ h1 {
     width: 600px; /* Same width as image */
     display: flex; /* Use flexbox for cards */
     flex-direction: row; /* Arrange in a row */
-    justify-content: center; /* Center items */
+    justify-content: space-between; /* Distribute space between cards */
     align-items: center; /* Center items vertically */
-    gap: 10px; /* Space between cards */
+    /* Removed gap here, will use margin on cards */
 }
 
 
 
 .option-card {
     width: 190px; /* Fixed width for 1/3 of 600px (200px - 10px for margin) */
+    margin: 0 5px; /* Added horizontal margin for spacing */
     padding: 20px 10px; /* Adjusted padding for smaller width */
     font-size: 1.5em; /* Adjusted font size for smaller width */
     text-align: center;
@@ -128,6 +129,73 @@ h1 {
     max-width: 700px;
     width: 100%;
     box-sizing: border-box;
+}
+
+}
+
+.quiz-section {
+    background-color: #2a2a2a;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    margin-top: 40px; /* More space from quiz */
+    max-width: 700px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#showPlantInput {
+    width: calc(100% - 40px);
+    padding: 15px 20px;
+    margin-top: 15px;
+    font-size: 1.2em;
+    background-color: #3a3a3a;
+    color: #e0e0e0;
+    border: 1px solid #555;
+    border-radius: 8px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s ease-in-out;
+}
+
+#showPlantInput:focus {
+    border-color: #4CAF50;
+}
+
+#suggestions-container {
+    position: relative; /* For positioning suggestion items */
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    background-color: #3a3a3a;
+    border: 1px solid #555;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 100; /* Ensure it's above other content */
+}
+
+.suggestion-item {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    color: #e0e0e0;
+    cursor: pointer;
+    text-align: left;
+}
+
+.suggestion-item:hover {
+    background-color: #4CAF50;
+    color: #1a1a1a;
+}
+
+#showPlantImage {
+    width: 600px; /* Same as quiz image */
+    height: 450px; /* Same as quiz image */
+    object-fit: contain;
+    border: 5px solid #4CAF50;
+    border-radius: 10px;
+    margin-top: 20px;
 }
 
 #final-score {

@@ -19,7 +19,7 @@ const customImages = {
     "voikukka": "https://i.media.fi/incoming/bawa09/1169230-e1562065496860.jpg/alternates/FREE_1440/1169230-e1562065496860.jpg",
     "isokarpalo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/VacciniumOxycoccos.jpg/1280px-VacciniumOxycoccos.jpg",
     "ajuruoho": "https://www.vihervimma.fi/tuotekuvat/1200x1200/harmaa-ajoruoho_albiflorus.jpg",
-    "pikkukarpalo": "https://images.luontoportti.com/TRNZ-DX7KnHgHPKiIC6UMrQX7nC0NDG5W8EsLuJXQCo/resize:fit:1920:1080/watermark:1.0:noea:-105:20:0/plain/s3://lportti-prod-images/86ba8208-4fe2-4e12-8750-812379c37d8e@jpeg",
+    "pikkukarpalo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/20121015-FS-UNK-0009_%288090982330%29.jpg/1225px-20121015-FS-UNK-0009_%288090982330%29.jpg",
     "raita": "https://peda.net/oppimateriaalit/e-oppi/verkkokauppa/yl%C3%A4koulu/lukuvuosi-2021-2022/ebiologia-8-2021/e8n7/5-metsien-kasvit/kasvit/kuvamappi/puulajikuvia/raita:file/download/0e2d2e3bd0f0f662f26e45293afe6d0b9f434777/Raidan%20lehdet.jpg",
     "poimulehti": "https://hortapuisto.fi/wp-content/uploads/2021/05/kukkiva-poimulehti-768x1024.jpg",
     "kataja": "https://www.arktisetaromit.fi/binary/file/-/fid/208/",
@@ -175,3 +175,57 @@ window.onload = () => {
     shuffledPlants = shuffle([...allPlants]);
     loadQuiz();
 };
+
+// Näytä Kasvi section logic
+const showPlantInput = document.getElementById('showPlantInput');
+const suggestionsContainer = document.getElementById('suggestions-container');
+const showPlantImage = document.getElementById('showPlantImage');
+
+let currentSuggestions = [];
+
+showPlantInput.addEventListener('input', () => {
+    const query = showPlantInput.value.toLowerCase();
+    suggestionsContainer.innerHTML = '';
+    currentSuggestions = [];
+
+    if (query.length > 0) {
+        const filteredPlants = allPlants.filter(plant => 
+            plant.toLowerCase().includes(query)
+        ).slice(0, 10); // Limit to 10 suggestions
+
+        filteredPlants.forEach(plant => {
+            const suggestionItem = document.createElement('div');
+            suggestionItem.classList.add('suggestion-item');
+            suggestionItem.textContent = plant;
+            suggestionItem.addEventListener('click', () => {
+                showPlantInput.value = plant;
+                suggestionsContainer.innerHTML = '';
+                displaySelectedPlantImage(plant);
+            });
+            suggestionsContainer.appendChild(suggestionItem);
+            currentSuggestions.push(plant);
+        });
+    }
+});
+
+showPlantInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        const selectedPlant = showPlantInput.value.trim();
+        if (allPlants.includes(selectedPlant)) {
+            displaySelectedPlantImage(selectedPlant);
+            suggestionsContainer.innerHTML = ''; // Clear suggestions
+        } else if (currentSuggestions.length > 0) {
+            // If no exact match but suggestions exist, pick the first one
+            showPlantInput.value = currentSuggestions[0];
+            displaySelectedPlantImage(currentSuggestions[0]);
+            suggestionsContainer.innerHTML = '';
+        }
+    }
+});
+
+async function displaySelectedPlantImage(plantName) {
+    const imageUrl = await findPlantImage(plantName);
+    showPlantImage.src = imageUrl;
+    showPlantImage.alt = plantName;
+    showPlantImage.style.display = 'block';
+}
